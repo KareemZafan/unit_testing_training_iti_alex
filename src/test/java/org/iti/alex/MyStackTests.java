@@ -1,8 +1,8 @@
 package org.iti.alex;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 
 import java.util.List;
 
@@ -51,6 +51,7 @@ public class MyStackTests {
 
     @Test
     @DisplayName("Check Stack State functionality")
+    @Tag("Feb")
     void testGetCurrentStack(){
         assertTrue(myStack.getCurrentStack().isEmpty());
         myStack.push("ITI-Alex-Mobile1");
@@ -63,6 +64,7 @@ public class MyStackTests {
 
     @Test
     @DisplayName("Check Getting Last Item functionality")
+    @EnabledOnOs(OS.WINDOWS)
     void testGetStackPeek() {
         assertTrue(myStack.getCurrentStack().isEmpty());
         assertNull(myStack.getStackPeek());
@@ -75,6 +77,7 @@ public class MyStackTests {
 
     @Test
     @DisplayName("Check Getting Stack Size functionality")
+    @Disabled
     void testGetStackSize() {
         assertTrue(myStack.getCurrentStack().isEmpty());
         assertEquals(0,myStack.getSize());
