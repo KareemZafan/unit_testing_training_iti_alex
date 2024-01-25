@@ -8,8 +8,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTests {
     private Calculator calculator;
@@ -61,6 +60,11 @@ public class CalculatorTests {
     @Tag("Feb")
     void testSquareRoot() {
         assertEquals(4, calculator.squareRoot(16));
+    }
+
+    @Test
+    void makeTestFails(){
+        assertFalse(1 == 1);
     }
 
 }
